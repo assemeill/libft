@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_int_size.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 19:52:51 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 12:37:36 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/03 11:32:57 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/03 11:51:47 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+int		ft_int_size(int n)
 {
-	if (!n)
-		return ;
+	int i;
+
 	if (ft_if_negative(n))
-	{
-		write(1, "-", 1);
-		ft_putnbr((n*(-1)));
-	}
-	else if (n >= 10)
-	{
-		ft_putnbr(n/10);
-		ft_putchar(n%10 + '0');
-	}
+		i = 1;
 	else
-		ft_putchar((n +'0'));
-	return ;
+		i = 0;
+	while (n/10 != 0)
+	{
+		n/=10;
+		i++;
+	}
+	return (i);
 }

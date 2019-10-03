@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 14:39:28 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/02 19:24:35 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/03 12:06:28 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,17 @@ char	*ft_strtrim(char const *s);
 int		ft_isspace(int ch);
 char	**ft_strsplit(char const *s, char c);
 char	*ft_itoa(int n);
+int		ft_if_negative(int n);
+int		ft_int_size(int n);
+char	*ft_base(char *str, int n, int i, int j);
 int		ft_words_count(char const *s, char c);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

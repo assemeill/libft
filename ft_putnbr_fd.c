@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 19:52:51 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 12:37:36 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/03 12:04:46 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/03 12:40:58 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (!n)
 		return ;
 	if (ft_if_negative(n))
 	{
-		write(1, "-", 1);
-		ft_putnbr((n*(-1)));
+		write(fd, "-", 1);
+		ft_putnbr_fd((n*(-1)), fd);
 	}
 	else if (n >= 10)
 	{
-		ft_putnbr(n/10);
-		ft_putchar(n%10 + '0');
+		ft_putnbr_fd((n/10), fd);
+		ft_putchar_fd((n%10 + '0'), fd);
 	}
 	else
-		ft_putchar((n +'0'));
+		ft_putchar_fd((n +'0'), fd);
 	return ;
 }

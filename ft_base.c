@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_base.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 19:52:51 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 12:37:36 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/03 11:55:56 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/03 12:17:14 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+char	*ft_base(char *str, int n, int i, int j)
 {
-	if (!n)
-		return ;
-	if (ft_if_negative(n))
+	while (n%10 != 10 && i >= j)
 	{
-		write(1, "-", 1);
-		ft_putnbr((n*(-1)));
+		str[i--] = n%10 + '0';
+		n -= n%10;
+		n /= 10;
 	}
-	else if (n >= 10)
-	{
-		ft_putnbr(n/10);
-		ft_putchar(n%10 + '0');
-	}
-	else
-		ft_putchar((n +'0'));
-	return ;
+	return(str);
 }
+

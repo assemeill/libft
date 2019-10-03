@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_if_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/01 19:52:51 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 12:37:36 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/03 11:31:06 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/03 11:52:04 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+int		ft_if_negative(int n)
 {
-	if (!n)
-		return ;
-	if (ft_if_negative(n))
-	{
-		write(1, "-", 1);
-		ft_putnbr((n*(-1)));
-	}
-	else if (n >= 10)
-	{
-		ft_putnbr(n/10);
-		ft_putchar(n%10 + '0');
-	}
+	if (n < 0)
+		return (1);
 	else
-		ft_putchar((n +'0'));
-	return ;
+		return (0);
 }
