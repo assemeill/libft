@@ -6,7 +6,7 @@
 #    By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/19 11:52:01 by aszhilki          #+#    #+#              #
-#    Updated: 2019/10/03 12:07:33 by aszhilki         ###   ########.fr        #
+#    Updated: 2019/10/03 17:21:12 by aszhilki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,17 +22,19 @@ FILE_A = libft.a
 
 FLAGS = -Wall -Werror -Wextra
 
-all:	$(NAME)
+all: $(NAME)
 
 $(NAME): $(FILE_O)
-	gcc -c $(FILE) -I $(FILE_H) $(FLAGS)
 	ar rc $(NAME) $(FILE_O)
 	ranlib $(NAME)
 
+$(FILE_O):
+	gcc -c $(FILE) -I $(FILE_H) $(FLAGS)
+
 clean:
-	/bin/rm -f $(FILE_O)
+	rm -f $(FILE_O)
 
 fclean:	clean
-	/bin/rm -f $(NAME)
+	rm -f $(NAME)
 
 re:	fclean all
