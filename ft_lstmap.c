@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 11:55:56 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 15:28:41 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/05 12:57:23 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/05 13:44:07 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_base(char *str, int n, int i, int j)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	while (n % 10 != 10 && i >= j)
+	t_list	*new;
+
+	if (!lst || !f)
+		return (NULL);
+	else if (lst)
 	{
-		str[i--] = n % 10 + '0';
-		n -= n % 10;
-		n /= 10;
+		if (!(new = (t_list*)malloc(sizeof(lst))))
+			return (NULL);
+		new = f(lst);
+		new->next = ft_lstmap(lst->next, f);
+		return(new);
 	}
-	return (str);
+	return (NULL);
 }

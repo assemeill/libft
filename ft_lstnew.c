@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 11:55:56 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 15:28:41 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/03 15:42:22 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/05 13:39:35 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_base(char *str, int n, int i, int j)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	while (n % 10 != 10 && i >= j)
+	t_list	*tmp;
+
+	if (!( tmp = (t_list *)malloc(sizeof(t_list) * content_size)))
+		return (NULL);
+	if (!content)
 	{
-		str[i--] = n % 10 + '0';
-		n -= n % 10;
-		n /= 10;
+		tmp->content = NULL;
+		content_size = 0;
 	}
-	return (str);
+	else
+	{
+		if (!(tmp->content = ft_memalloc(content_size)))
+			return (NULL);
+		ft_memcpy(tmp->content, content, content_size);
+	}
+	tmp->content_size = content_size;
+	tmp->next = NULL;
+	return (tmp);
 }

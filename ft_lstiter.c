@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 11:55:56 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 15:28:41 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/05 12:53:39 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/05 13:37:12 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_base(char *str, int n, int i, int j)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	while (n % 10 != 10 && i >= j)
+	if (lst == NULL)
+		return;
+	while(lst)
 	{
-		str[i--] = n % 10 + '0';
-		n -= n % 10;
-		n /= 10;
+		f(lst);
+		lst = lst->next;
 	}
-	return (str);
 }

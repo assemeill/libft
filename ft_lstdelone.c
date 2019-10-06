@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base.c                                          :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 11:55:56 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 15:28:41 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/04 12:12:11 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/05 13:31:47 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_base(char *str, int n, int i, int j)
+void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
-	while (n % 10 != 10 && i >= j)
-	{
-		str[i--] = n % 10 + '0';
-		n -= n % 10;
-		n /= 10;
-	}
-	return (str);
+	del((*alst)->content, (*alst)->content_size);
+	ft_memdel((void**)alst);
 }

@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_base.c                                          :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 11:55:56 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 15:28:41 by aszhilki         ###   ########.fr       */
+/*   Created: 2019/10/05 12:46:00 by aszhilki          #+#    #+#             */
+/*   Updated: 2019/10/05 12:53:27 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_base(char *str, int n, int i, int j)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	while (n % 10 != 10 && i >= j)
-	{
-		str[i--] = n % 10 + '0';
-		n -= n % 10;
-		n /= 10;
-	}
-	return (str);
+	if (*alst)
+		new->next = *alst;
+	*alst = new;
 }

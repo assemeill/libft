@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 17:31:50 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 11:58:55 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/03 15:31:58 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,8 @@ char	*ft_itoa(int n)
 	if (ft_if_negative(n))
 	{
 		str[j] = '-';
-        n = -1 * n;
+		n = -1 * n;
 		j = 1;
 	}
-	ft_base(str, n, i, j);
-	return (str);
+	return (ft_base(str, n, i, j));
 }
