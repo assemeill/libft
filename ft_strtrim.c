@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 16:07:55 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/03 15:40:28 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/07 15:21:53 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strtrim(char const *s)
 		n++;
 	while (ft_isspace(*s))
 		s++;
-	if (n < ft_strlen(s))
+	if (n < (int)ft_strlen(s))
 		n = ft_strlen(s) - n;
 	else
 		return ("\0");

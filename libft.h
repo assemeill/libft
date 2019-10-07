@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 14:39:28 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/05 13:35:22 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/07 13:42:03 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-int		ft_strlen(const char *c);
+size_t	ft_strlen(const char *c);
 char	*ft_strdup(char *src);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
@@ -43,7 +43,7 @@ char	*ft_strrchr(const char *src, int n);
 char	*ft_strstr(const char *str, const char *to_find);
 char	*ft_strnstr(char *haystack, char *needle, size_t len);
 int		ft_strcmp(const char *s1, const char *s2);
-int		ft_strncmp(char *s1, char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *c);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

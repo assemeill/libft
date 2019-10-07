@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/05 12:57:23 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/05 13:44:07 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/07 11:27:41 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 			return (NULL);
 		new = f(lst);
 		new->next = ft_lstmap(lst->next, f);
-		return(new);
+		return (new);
 	}
 	return (NULL);
 }

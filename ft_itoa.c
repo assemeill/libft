@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 17:31:50 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/07 13:04:13 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/07 16:37:44 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	j = 0;
+	if (n == '0')
+		return ("0");
 	i = ft_int_size(n);
 	if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);

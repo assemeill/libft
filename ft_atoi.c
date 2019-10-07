@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 18:47:41 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/01 14:25:57 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/07 15:31:52 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,12 @@ int		ft_atoi(const char *c)
 	if_negative = 1;
 	while ((*c == 32) || (*c >= 9 && *c <= 13))
 		c++;
-	if (*c == '-')
+	if (*c == '-' || *c == '+')
 	{
-		if_negative = -1;
+		if (*c == '-')
+			if_negative = -1;
 		c++;
 	}
-	if (*c == '+')
-		c++;
 	while (*c >= '0' & *c <= '9')
 	{
 		check = number;
