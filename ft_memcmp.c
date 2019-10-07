@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 16:53:15 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/09/24 18:18:02 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/07 12:38:09 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (*str1 - *str2);
 		l++;
 	}
-	return ('\0');
+	return (NULL);
 }
