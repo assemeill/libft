@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 16:07:55 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/07 15:21:53 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/08 14:52:01 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ char	*ft_strtrim(char const *s)
 	if (n < (int)ft_strlen(s))
 		n = ft_strlen(s) - n;
 	else
-		return ("\0");
-	if (n < 1 || !(str = (char *)malloc(sizeof(char) * (n + 1))))
+		n = 0;
+	if (!(str = (char *)malloc(sizeof(char) * (n + 1))))
 		return (NULL);
 	else
 		while (*s && n > i)

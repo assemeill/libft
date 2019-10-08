@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 17:31:50 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/08 10:55:14 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/08 15:26:04 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ char	*ft_itoa(int n)
 		j = 1;
 	}
 	str = (ft_base(str, n, i, j));
-	return(str);
+	return (str);
 }
