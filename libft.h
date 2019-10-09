@@ -6,13 +6,12 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/01 14:39:28 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/07 13:42:03 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/08 20:14:30 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
@@ -21,7 +20,7 @@ typedef	struct		s_list
 {
 	void			*content;
 	size_t			content_size;
-	struct	s_list	*next;
+	struct s_list	*next;
 }					t_list;
 
 void	*ft_memset(void *str, int ch, size_t n);
