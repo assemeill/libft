@@ -6,7 +6,7 @@
 /*   By: aszhilki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/13 10:33:52 by aszhilki          #+#    #+#             */
-/*   Updated: 2019/10/07 13:09:30 by aszhilki         ###   ########.fr       */
+/*   Updated: 2019/10/08 20:06:02 by aszhilki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		{
 			s1++;
 			s2++;
-			if (*s1 == '\0')
+			if (*s2 == '\0')
 				return (0);
 		}
 		else if (*s1 != *s2)
